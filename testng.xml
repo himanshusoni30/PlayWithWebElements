@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/himanshusoni/CodingPractice/TestProjects">
+        <classes>
+            <class name="testcases.handlepopups.JSAlertOrSimplePopUp">
+                <methods>
+                    <include name="testPopUpTextAndClickOnOk"/>
+                </methods>
+            </class>
+            <class name="testcases.handlepopups.JSConfirmOrConfirmationPopUp">
+                <methods>
+                    <include name="testConfirmationPopUpTextAndAccept"/>
+                </methods>
+            </class>
+            <class name="testcases.handlepopups.JSPromptOrUpdateTextPopUp">
+                <methods>
+                    <include name="testConfirmationPopUpTextAndAccept"/>
+                </methods>
+            </class>
+            <class name="testcases.handlepopups.UploadFilePopUp">
+                <methods>
+                    <include name="testConfirmationPopUpTextAndAccept"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
