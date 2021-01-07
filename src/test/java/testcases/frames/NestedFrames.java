@@ -9,7 +9,6 @@ public class NestedFrames extends BaseTest {
     @Test
     public static void testNestedFrames() {
         CommonMethods.navigateToURL(prop.getProperty("nested_frames"));
-//        String mainPage = driver.getWindowHandle();
 
         driver.switchTo().frame("frame-top");
 
@@ -18,8 +17,11 @@ public class NestedFrames extends BaseTest {
         System.out.println("Left Frame: "+leftFrame);
         asrt.assertEquals(driver.findElement(By.xpath("/html/body")).getText(), "LEFT", "Text validation failed.");
 
+        /**
+         * Change focus to the parent context.
+         * If the current context is the top level browsing context, the context remains unchanged.
+         */
         driver.switchTo().parentFrame();
-//        driver.switchTo().defaultContent();
 
         driver.switchTo().frame("frame-middle");
         String midFrame = driver.findElement(By.xpath("//div[@id='content']")).getText();
@@ -27,17 +29,16 @@ public class NestedFrames extends BaseTest {
         asrt.assertEquals(midFrame, "MIDDLE", "Text validation failed.");
 
         driver.switchTo().parentFrame();
-//        driver.switchTo().defaultContent();
 
         driver.switchTo().frame("frame-right");
         String rightFrame = driver.findElement(By.xpath("/html/body")).getText();
         System.out.println("Right Frame: "+rightFrame);
         asrt.assertEquals(rightFrame, "RIGHT", "Text validation failed.");
 
-//        driver.switchTo().parentFrame();
-//        driver.switchTo().parentFrame();
+        /**
+         * Selects either the first frame on the page, or the main document when a page contains iframes.
+         */
         driver.switchTo().defaultContent();
-//        driver.switchTo().window(mainPage);
 
         driver.switchTo().frame("frame-bottom");
         String bottomFrame = driver.findElement(By.xpath("/html/body")).getText();

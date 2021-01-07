@@ -3,6 +3,16 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/himanshusoni/CodingPractice/TestProjects">
         <classes>
+            <class name="testcases.frames.NestedFrames">
+                <methods>
+                    <include name="testNestedFrames"/>
+                </methods>
+            </class>
+            <class name="testcases.frames.iFrames">
+                <methods>
+                    <include name="testIFrames"/>
+                </methods>
+            </class>
             <class name="testcases.handlepopups.JSAlertOrSimplePopUp">
                 <methods>
                     <include name="testPopUpTextAndClickOnOk"/>
